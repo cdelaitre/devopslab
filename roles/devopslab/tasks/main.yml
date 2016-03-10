@@ -12,5 +12,10 @@
   with_items:
     - devopslab.yml
 
+- name: configure
+  template: src={{item}} dest={{ devopslab_conf }}/{{ item }}
+  with_items:
+    - sonar.properties
+
 - name: run
   command: '{{ devopslab_bin }}/docker-compose -f {{ devopslab_root }}/devopslab.yml up -d'
