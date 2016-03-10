@@ -1,0 +1,11 @@
+- name: setup filesystem
+  file: path={{ item }} state=directory
+  with_items:
+    - "{{ devopslab_bin }}"
+
+- name: install
+  get_url: >
+    dest={{ devopslab_bin }}/docker-compose
+    url=https://github.com/docker/compose/releases/download/{{ devopslab_docker_compose_version }}/docker-compose-Linux-x86_64
+    validate_certs=no
+    mode=755

@@ -1,0 +1,16 @@
+- name: setup filesystem
+  file: path={{ item }} state=directory
+  with_items:
+    - "{{ devopslab_root }}"
+    - "{{ devopslab_bin }}"
+    - "{{ devopslab_conf }}"
+    - "{{ devopslab_root }}/sonarqube"
+    - "{{ devopslab_root }}/postgres"
+
+- name: install
+  template: src={{item}} dest={{ devopslab_root }}/{{ item }}
+  with_items:
+    - devopslab.yml
+
+- name: run
+  command: '{{ devopslab_bin }}/docker-compose -f {{ devopslab_root }}/devopslab.yml up -d'

@@ -1,0 +1,5 @@
+---
+devopslab_root: "/devopslab"
+devopslab_bin: "{{ devopslab_root }}/bin"
+devopslab_conf: "{{ devopslab_root }}/conf"
+devopslab_docker_compose_version: "1.6.2"

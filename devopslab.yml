@@ -1,0 +1,11 @@
+---
+- hosts: repository 
+  remote_user: ansible
+  connection: local
+  roles:
+    - devopslab
+  environment:
+    http_proxy: http://{{http_proxy_host}}:{{http_proxy_port}}
+    https_proxy: http://{{http_proxy_host}}:{{http_proxy_port}}
+  become: yes
+  become_user: root
