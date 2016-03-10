@@ -1,0 +1,5 @@
+---
+devopslab_root: "/devopslab"
+devopslab_bin: "{{ devopslab_root }}/bin"
+devopslab_sonarqube_conf: "{{ devopslab_root }}/sonarqube/conf"
+devopslab_sonarqube_pgdata: "{{ devopslab_root }}/sonarqube/pgdata"

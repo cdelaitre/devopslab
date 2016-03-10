@@ -5,25 +5,31 @@ services:
     ports:
       - "9000:9000"
     depends_on:
-      - postgres
+      - pg
     environment:
-      - SONARQUBE_JDBC_URL=jdbc:postgresql://postgres:5432/sonar
+      - SONARQUBE_JDBC_URL=jdbc:postgresql://pg:5432/sonar
     volumes:
-      - {{ devopslab_conf }}/sonar.properties:/opt/sonarqube/conf/sonar.properties 
+      - {{ devopslab_sonarqube_conf }}/sonar.properties:/opt/sonarqube/conf/sonar.properties 
     networks:
-      - front-tier
-      - back-tier
-  postgres:
+      - front
+      - back
+  pg:
     image: postgres
+    depends_on:
+      - pgdata
     environment:
       - POSTGRES_USER=sonar
       - POSTGRES_PASSWORD=sonar
-    volumes:
-      - {{ devopslab_root }}/postgres:/var/lib/postgresql
+    volumes_from:
+      - pgdata
     networks:
-      - back-tier
+      - back
+  pgdata:
+    image: postgres
+    volumes:
+      - {{ devopslab_sonarqube_pgdata }}:/var/lib/postgresql/data
 networks:
-  front-tier:
+  front:
     driver: bridge
-  back-tier:
+  back:
     driver: bridge

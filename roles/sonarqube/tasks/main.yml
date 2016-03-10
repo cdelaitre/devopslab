@@ -1,0 +1,6 @@
+---
+- name: configuration
+  template: src={{item}} dest={{ devopslab_sonarqube_conf }}/{{ item }}
+  with_items:
+    - sonar.properties
+

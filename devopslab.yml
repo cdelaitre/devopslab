@@ -5,7 +5,6 @@
   roles:
     - devopslab
   environment:
-    http_proxy: http://{{http_proxy_host}}:{{http_proxy_port}}
-    https_proxy: http://{{http_proxy_host}}:{{http_proxy_port}}
+    - "{{ proxy_env }}"
   become: yes
   become_user: root
