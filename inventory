@@ -1,8 +1,8 @@
 [devopslab]
-repository ansible_host=10.200.52.76
+repository ansible_host=repository
 
 [devopslab:vars]
-http_proxy_host=10.200.100.15
-http_proxy_port=80
-https_proxy_host=10.200.100.15
-https_proxy_port=80
+http_proxy_host={{ lookup('env','HTTP_PROXY_HOST') }}
+http_proxy_port={{ lookup('env','HTTP_PROXY_PORT') }}
+https_proxy_host={{ lookup('env','HTTPS_PROXY_HOST') }}
+https_proxy_port={{ lookup('env','HTTPS_PROXY_PORT') }}
