@@ -1,8 +1,0 @@
----
-- name: common filesystem
-  file: path={{ item }} state=directory
-  with_items:
-    - "{{ devopslab_root }}"
-    - "{{ devopslab_bin }}"
-    - "{{ devopslab_sonarqube_conf }}"
-    - "{{ devopslab_sonarqube_pgdata }}"

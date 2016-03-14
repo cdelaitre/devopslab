@@ -1,2 +1,2 @@
 #!/bin/bash
-ansible-playbook -vvvv -i inventory devopslab.yml
+ansible-playbook -vvvv -i inventory playbook-devopslab.yml

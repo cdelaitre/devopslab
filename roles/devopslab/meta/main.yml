@@ -1,5 +1,5 @@
 ---
 dependencies:
-  - { role: commonfs }
+  - { role: filesystem }
   - { role: docker-compose }
-  - { role: sonarqube }
+  - { role: conf }

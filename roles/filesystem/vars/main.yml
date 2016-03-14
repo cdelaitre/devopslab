@@ -1,0 +1,6 @@
+---
+devopslab_root: "/devopslab"
+devopslab_bin: "{{ devopslab_root }}/bin"
+devopslab_conf: "{{ devopslab_root }}/conf"
+devopslab_log: "{{ devopslab_root }}/log"
+devopslab_data: "{{ devopslab_root }}/data"

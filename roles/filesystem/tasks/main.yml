@@ -1,0 +1,13 @@
+---
+- name: filesystem
+  file: path={{ item }} state=directory
+  with_items:
+    - "{{ devopslab_root }}"
+    - "{{ devopslab_bin }}"
+    - "{{ devopslab_conf }}"
+    - "{{ devopslab_conf }}/gitlab"
+    - "{{ devopslab_log }}"
+    - "{{ devopslab_log }}/gitlab"
+    - "{{ devopslab_data }}"
+    - "{{ devopslab_data }}/gitlab"
+    - "{{ devopslab_data }}/sonarqube_pgdata"
